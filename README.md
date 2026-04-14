@@ -43,28 +43,6 @@ python3 mic_streamer.py --host <PI_IP> --port 5050
 
 3. Speak into the Mac mic; transcription appears on the Pi.
 
-## Mac mic -> Raspberry Pi (Whisper small)
-
-Use Faster-Whisper on the Pi with the same Mac mic sender.
-
-1. On Raspberry Pi (Whisper server):
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements-whisper.txt
-python3 pi_asr_server_whisper.py --language ko --model small --compute-type int8 --port 5050
-```
-
-2. On Mac (mic sender):
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-python3 mic_streamer.py --host <PI_IP> --port 5050
-```
-
 ## Notes
 
 - macOS will prompt for microphone permission the first time you run it.
