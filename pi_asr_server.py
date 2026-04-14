@@ -72,6 +72,7 @@ def transcribe_wav(path, language, model_path_override=None, model_arch_override
     try:
         from moonshine_voice import get_model_for_language
         import moonshine_voice as mv
+        import moonshine_voice.transcriber 
         from moonshine_voice.utils import load_wav_file
     except Exception as exc:
         raise RuntimeError("moonshine_voice import failed") from exc
