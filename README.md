@@ -69,6 +69,11 @@ python3 moonshine_realtime_mapped.py --language ko --device <DEVICE_IDX> --sampl
 4. `창문 불투명하게 해줘`
 
 ```bash
+source .venv/bin/activate
+python3 -c "import sounddevice as sd; print(sd.query_devices())"
+```
+
+```bash
 cd ~/moonshine
 source .venv/bin/activate
 python3 moonshine_realtime_forced.py --language ko --device <DEVICE_IDX> --samplerate 48000 --channels 1 --blocksize 4096 --update-interval 1.0 --final-only --merge-window 0.8 --min-chars 2
